@@ -1,0 +1,31 @@
+{
+  "Basic HTML with Comment and b/i/u Demo": {
+    "prefix": "buse-kurt",
+    "scope": "html",
+    "body": [
+      "<!-- Name: ${1:Buse} ${2:Kurt}, Group: ${3:EKFU24/1} -->",
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "  <head>",
+      "    <meta charset=\"utf-8\" />",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+      "    <title>${4:HTML Basics Demo}</title>",
+      "  </head>",
+      "  <body>",
+      "    <h1>HTML Text Styles</h1>",
+      "",
+      "    <p>This is <b>bold</b> text.</p>",
+      "    <p>This is <i>italic</i> text.</p>",
+      "    <p>This is <u>underlined</u> text.</p>",
+      "",
+      "    <p>",
+      "      You can also mix them:",
+      "      <b><i><u>bold, italic, and underlined</u></i></b>.",
+      "    </p>",
+      "  </body>",
+      "</html>"
+    ],
+    "description": "HTML scaffold with first-line comment and b/i/u examples"
+  }
+}
+
