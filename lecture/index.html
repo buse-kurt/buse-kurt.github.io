@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Hesap Makinesi</title>
+<style>
+    body {
+        background: #0c0f2b;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: white;
+    }
+
+    .calculator {
+        background: #11163a;
+        padding: 25px;
+        border-radius: 20px;
+        width: 320px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
+
+    .screen {
+        text-align: right;
+        padding: 10px 5px;
+        font-size: 28px;
+        height: 70px;
+    }
+
+    .old {
+        font-size: 16px;
+        opacity: 0.7;
+    }
+
+    .current {
+        font-size: 36px;
+        margin-top: 5px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 18px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        background: #1a204d;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #222a63;
+    }
+
+    .equals {
+        background: #3e8fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <div class="screen">
+        <div class="old" id="old"></div>
+        <div class="current" id="current">0</div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="clearCalc()">C</button>
+        <button onclick="plusMinus()">±</button>
+        <button onclick="press('%')">%</button>
+        <button onclick="press('/')">÷</button>
+
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('*')">×</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('-')">-</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('+')">+</button>
+
+        <button style="grid-column: span 2;" onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button class="equals" onclick="calculate()">=</button>
+    </div>
+</div>
+
+<script>
+    let current = "";
+    let oldExpression = "";
+
+    function press(value) {
+        current += value;
+        document.getElementById("current").textContent = current;
+    }
+
+    function clearCalc() {
+        current = "";
+        oldExpression = "";
+        document.getElementById("old").textContent = "";
+        document.getElementById("current").textContent = "0";
+    }
+
+    function plusMinus() {
+        if (!current) return;
+        if (current.startsWith("-")) {
+            current = current.substring(1);
+        } else {
+            current = "-" + current;
+        }
+        document.getElementById("current").textContent = current;
+    }
+
+    function calculate() {
+        try {
+            oldExpression = current + " =";
+            let result = eval(current.replace('×','*').replace('÷','/'));
+            document.getElementById("old").textContent = oldExpression;
+            document.getElementById("current").textContent = result;
+            current = result.toString();
+        } catch {
+            document.getElementById("current").textContent = "Hata";
+        }
+    }
+</script>
+
+</body>
+</html>

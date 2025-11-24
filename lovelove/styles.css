@@ -1,0 +1,218 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    
+        /* Yeni arka plan */
+        background: linear-gradient(135deg, #eea3c6, #d59def, #88c5f8);
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease infinite;
+    }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+.container {
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 18px;
+
+    /* Pembe buton */
+    background: linear-gradient(135deg, #ff7eb8, #ff4fa6);
+    border: none;
+    color: white;
+    font-weight: bold;
+
+    /* Parlama */
+    box-shadow: 0 0 12px rgba(255, 115, 185, 0.6);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px rgba(255, 115, 185, 0.9);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes heartRain {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.heart {
+    position: absolute;
+    color: pink;
+    font-size: 24px;
+    animation: heartRain 5s linear infinite alternate;
+}
+.fa-heart {
+    color: rgb(255, 166, 178);
+    font-size: 25px;
+    position: absolute;
+    animation:  heartMove linear 1;
+    top: -10vh;
+    z-index: 0;
+}
+
+@keyframes heartMove {
+    0%{
+        transform: translateY(-10vh) ;
+    }
+    100%{
+        transform: translateY(110vh) ;
+    }
+}
+/* Fade-in efekti */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Konfeti parçaları */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    top: -10px;
+    animation: fallConfetti linear forwards;
+}
+
+@keyframes fallConfetti {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Kalp yağmuru (fa-heart zaten vardı, yoruma uygun bıraktım) */
+.rain-heart {
+    position: fixed;
+    font-size: 25px;
+    color: pink;
+    animation: heartFall linear forwards;
+}
+
+@keyframes heartFall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* Shake (hafif sallanma) efekti */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+#title {
+    transition: transform 0.3s ease;
+}
+
+#newImage {
+    display: block;
+    margin: 0 auto; /* ORTALAR */
+    width: 425px;   /* BÜYÜKLÜK buradan ayarlanır */
+    max-width: 90%; /* Telefonlarda bozulmasın */
+    border-radius: 12px; /* istersen kaldırabilirsin */
+    box-shadow: 0 0 20px rgba(255, 150, 200, 0.4); /* tatlı pembiş parlama */
+}
+.cursor-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 18px;
+    color: pink;
+    opacity: 1;
+    animation: heartFade 0.9s linear forwards;
+}
+
+@keyframes heartFade {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px) scale(0.5);
+        opacity: 0;
+    }
+}
+.blurred-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* tıklamayı etkilemez */
+    z-index: -1; /* her şeyin arkasında kalır */
+    overflow: hidden;
+}
+
+.blurred-hearts .heart-shape {
+    position: absolute;
+    background-color: rgba(255, 182, 193, 0.55); /* pastel pembe */
+    width: 200px;
+    height: 200px;
+    transform: rotate(45deg);
+    filter: blur(25px);
+    border-radius: 25px;
+}
+
+/* Renk çeşitleri (pastel ve estetik) */
+.blurred-hearts .heart2 {
+    background-color: rgba(255, 225, 245, 0.6);
+}
+
+.blurred-hearts .heart3 {
+    background-color: rgba(255, 200, 240, 0.55);
+}
+
+.blurred-hearts .heart4 {
+    background-color: rgba(255, 160, 210, 0.5);
+}
+#image {
+    width: 1000px;      /* istediğin boy */
+    max-width: 80%;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+#image {
+    border-radius: 12px;
+}
+#image {
+    box-shadow: 0 0 20px rgba(255, 150, 200, 0.3);
+}

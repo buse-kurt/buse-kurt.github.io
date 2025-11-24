@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Exercise #1</title>
+<style>
+    body {
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 600px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .box {
+        padding: 25px 0;
+        text-align: center;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    /* Colors from the picture */
+    .c1 { background: #d14ac8; }
+    .c2 { background: #4b7bd5; }
+    .c3 { background: #7834b4; }
+    .c4 { background: #3fb9a8; }
+    .c6 { background: #d67ab8; }
+    .c7 { background: #6d2fcb; }
+    .c8 { background: #8b39c8; }
+
+    /* Layout positions */
+    #b1 { grid-column: span 6; }
+    #b2 { grid-column: span 2; }
+    #b3 { grid-column: span 2; }
+    #b4 { grid-column: span 2; }
+    #b6 { grid-column: span 4; }
+    #b7 { grid-column: span 2; }
+    #b8 { grid-column: span 6; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="box c1" id="b1">1</div>
+
+    <div class="box c2" id="b2">2</div>
+    <div class="box c3" id="b3">3</div>
+    <div class="box c4" id="b4">4</div>
+
+    <div class="box c6" id="b6">6</div>
+    <div class="box c7" id="b7">7</div>
+
+    <div class="box c8" id="b8">8</div>
+
+</div>
+
+</body>
+</html>
