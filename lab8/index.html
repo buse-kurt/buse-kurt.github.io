@@ -94,7 +94,7 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section animated-section" data-animate="fade-up">
 
       <img src="assets/img/hero-bg.jpg" alt="Hero background" data-aos="fade-in">
 
@@ -103,7 +103,7 @@
           <div class="col-lg-8">
             <h2>Buse Kurt</h2>
             <p>Student at Vilnius Gediminas Technical University</p>
-            <a href="about.html" class="btn-get-started">About Me</a>
+            <a href="about.html" class="btn-get-started btn-animated">About Me</a>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section animated-section" data-animate="fade-delay">
       <div class="container" data-aos="fade-up">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-8 content">
@@ -167,7 +167,13 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <div id="preloader" role="presentation" aria-hidden="true">
+    <div class="loader-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
