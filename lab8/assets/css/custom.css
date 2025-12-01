@@ -501,6 +501,102 @@ body {
   }
 }
 
+/* Extra decorative shape elements for hero (HTML-based) */
+.decorative-shape {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.shape-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 126, 179, 0.9), rgba(255, 117, 140, 0.5));
+  animation: float-ydrift 10s ease-in-out infinite;
+}
+
+.shape-circle-small {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122, 252, 255, 0.9), rgba(92, 225, 230, 0.4));
+  animation: float-x 12s ease-in-out infinite;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 95px solid rgba(196, 255, 221, 0.9);
+  animation: spin-float 18s linear infinite;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+}
+
+.shape-square {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, rgba(255, 210, 111, 0.95), rgba(255, 138, 0, 0.75));
+  border-radius: 22px;
+  transform: rotate(18deg);
+  animation: float-ydrift 14s ease-in-out infinite;
+}
+
+/* Positioning relative to hero section */
+.hero .shape-1 {
+  top: 8%;
+  left: 6%;
+}
+
+.hero .shape-2 {
+  top: 26%;
+  right: 10%;
+}
+
+.hero .shape-3 {
+  bottom: 22%;
+  left: 20%;
+}
+
+.hero .shape-4 {
+  bottom: 8%;
+  right: 24%;
+}
+
+@keyframes float-ydrift {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-28px) translateX(14px);
+  }
+}
+
+@keyframes float-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(32px);
+  }
+}
+
+@keyframes spin-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
 /* ============================================
    6) PREFERS-REDUCED-MOTION ACCESSIBILITY
    ============================================ */
