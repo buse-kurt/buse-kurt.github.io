@@ -28,6 +28,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom CSS File -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: Kelly
   * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
@@ -95,7 +98,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Get in touch and rate your experience with this portfolio.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -134,35 +137,75 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field" class="pb-2">Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" />
+                  <small id="name-error" class="text-danger d-block mt-1" style="display:none;"></small>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label for="surname-field" class="pb-2">Surname</label>
+                  <input type="text" name="surname" id="surname-field" class="form-control" />
+                  <small id="surname-error" class="text-danger d-block mt-1" style="display:none;"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" />
+                  <small id="email-error" class="text-danger d-block mt-1" style="display:none;"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="phone-field" class="pb-2">Phone number</label>
+                  <input type="tel" class="form-control" name="phone" id="phone-field" placeholder="+370 XXX XXXXX" />
+                  <small id="phone-error" class="text-danger d-block mt-1" style="display:none;"></small>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="address-field" class="pb-2">Address</label>
+                  <input type="text" class="form-control" name="address" id="address-field" />
+                  <small id="address-error" class="text-danger d-block mt-1" style="display:none;"></small>
+                  <small class="text-muted d-block mt-1">Helper tag: Aurora</small>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label class="pb-2 d-block">Rating 1 – Quality of Service (1–10)</label>
+                  <div class="d-flex align-items-center gap-3">
+                    <input type="range" class="form-range flex-grow-1" name="rating1" id="rating1" min="1" max="10" value="5" />
+                    <span id="rating1-value" class="badge bg-primary">5</span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="pb-2 d-block">Rating 2 – User Experience (1–10)</label>
+                  <div class="d-flex align-items-center gap-3">
+                    <input type="range" class="form-range flex-grow-1" name="rating2" id="rating2" min="1" max="10" value="5" />
+                    <span id="rating2-value" class="badge bg-primary">5</span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="pb-2 d-block">Rating 3 – Overall Satisfaction (1–10)</label>
+                  <div class="d-flex align-items-center gap-3">
+                    <input type="range" class="form-range flex-grow-1" name="rating3" id="rating3" min="1" max="10" value="5" />
+                    <span id="rating3-value" class="badge bg-primary">5</span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <p class="mt-2 mb-0">
+                    <strong>Average rating preview:</strong>
+                    <span id="average-preview-value" class="fw-bold">5.0</span>
+                  </p>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="error-message mb-2" style="display:none;"></div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn btn-primary btn-disabled" disabled>Submit</button>
                 </div>
 
               </div>
@@ -208,7 +251,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -219,6 +261,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom Contact Logic -->
+  <script src="assets/js/custom.js"></script>
 
 </body>
 

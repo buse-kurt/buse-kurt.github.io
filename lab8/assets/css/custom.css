@@ -611,3 +611,118 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================
+   7) CONTACT FORM CUSTOM STYLES
+   ============================================ */
+
+.php-email-form {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: var(--space-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.php-email-form label {
+  font-weight: 500;
+  color: #222;
+}
+
+.php-email-form .form-control,
+.php-email-form .form-range {
+  border-radius: 10px;
+  border-color: #dde2f0;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.php-email-form .form-control:focus,
+.php-email-form .form-range:focus {
+  border-color: var(--brand-main);
+  box-shadow: 0 0 0 0.15rem rgba(108, 99, 255, 0.2);
+}
+
+.php-email-form .input-error {
+  border-color: #e74c3c !important;
+}
+
+.php-email-form .input-valid {
+  border-color: #27ae60 !important;
+}
+
+.php-email-form .error-message {
+  background: #ffe6e6;
+  color: #b3261e;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.php-email-form .btn-disabled {
+  background: #cfd4e8 !important;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.php-email-form .btn-enabled {
+  background: var(--brand-main) !important;
+}
+
+.form-results {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: 14px;
+  background: #f8f9ff;
+  border: 1px solid #dde2f7;
+}
+
+.form-results h4 {
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  color: #222;
+}
+
+.form-results .results-data p {
+  margin-bottom: 0.35rem;
+}
+
+.success-popup {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  padding: 1rem 1.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  border-left: 4px solid #27ae60;
+}
+
+.success-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-popup .popup-icon {
+  color: #27ae60;
+  font-size: 1.7rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.success-popup h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.success-popup p {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
