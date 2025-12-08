@@ -726,3 +726,258 @@ body {
   font-size: 0.95rem;
 }
 
+/* ============================================
+   8) MEMORY GAME STYLES
+   ============================================ */
+
+.memory-game {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: var(--space-xl);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.memory-game-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.difficulty-selector {
+  text-align: center;
+  padding: var(--space-md);
+  background: #f8f9ff;
+  border-radius: 12px;
+}
+
+.difficulty-selector label {
+  font-weight: 600;
+  color: #222;
+  margin-right: 1rem;
+}
+
+.difficulty-selector select {
+  border-radius: 8px;
+  border-color: #dde2f0;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.stats-panel {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.stat-item {
+  padding: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--brand-main);
+}
+
+.game-controls {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.game-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-board {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  margin: var(--space-lg) auto;
+  max-width: 100%;
+}
+
+.game-board.difficulty-easy {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 600px;
+}
+
+.game-board.difficulty-hard {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 900px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  cursor: pointer;
+  perspective: 1000px;
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.memory-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #b19cd9, #d4c5e8);
+  color: white;
+}
+
+.card-back {
+  background: #f5f0ff;
+  color: #8b6fb8;
+  transform: rotateY(180deg);
+  border: 2px solid #b19cd9;
+}
+
+.card-front i,
+.card-back i {
+  font-size: 2.5rem;
+}
+
+.memory-card:hover .card-front {
+  box-shadow: 0 6px 20px rgba(177, 156, 217, 0.4);
+}
+
+.memory-card.matched .card-back {
+  background: #e8d5f5;
+  border-color: #b19cd9;
+}
+
+.win-message {
+  margin-top: var(--space-lg);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid #27ae60;
+}
+
+.win-content {
+  color: #1b5e20;
+}
+
+.win-content i {
+  font-size: 4rem;
+  color: #ffd700;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.win-content h3 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  color: #1b5e20;
+}
+
+.win-content p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  color: #2e7d32;
+}
+
+.win-stats {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: var(--space-md);
+}
+
+.win-stats span {
+  color: var(--brand-main-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-board.difficulty-easy {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .game-board.difficulty-hard {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .memory-card {
+    max-width: 80px;
+  }
+
+  .card-front i,
+  .card-back i {
+    font-size: 1.8rem;
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
+  }
+
+  .win-content i {
+    font-size: 3rem;
+  }
+
+  .win-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .memory-card {
+    max-width: 70px;
+  }
+
+  .card-front i,
+  .card-back i {
+    font-size: 1.5rem;
+  }
+
+  .difficulty-selector {
+    flex-direction: column;
+  }
+
+  .difficulty-selector label {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+

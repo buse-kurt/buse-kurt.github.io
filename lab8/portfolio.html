@@ -28,6 +28,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom CSS File -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: Kelly
   * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
@@ -149,6 +152,76 @@
 
     </section><!-- /Portfolio Section -->
 
+    <!-- Memory Game Section -->
+    <section id="memory-game" class="memory-game section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Memory Game</h2>
+          <p>Test your memory skills by matching pairs of cards</p>
+        </div>
+
+        <div class="memory-game-wrapper">
+          <!-- Difficulty Selector -->
+          <div class="difficulty-selector mb-4">
+            <label for="difficulty-select" class="me-3">Difficulty Level:</label>
+            <select id="difficulty-select" class="form-select d-inline-block" style="width: auto;">
+              <option value="easy">Easy (4×3)</option>
+              <option value="hard">Hard (6×4)</option>
+            </select>
+          </div>
+
+          <!-- Stats Panel -->
+          <div class="stats-panel mb-4">
+            <div class="row text-center">
+              <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="stat-item">
+                  <div class="stat-label">Moves</div>
+                  <div class="stat-value" id="moves-count">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="stat-item">
+                  <div class="stat-label">Matches</div>
+                  <div class="stat-value" id="matches-count">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="stat-item">
+                  <div class="stat-label">Time</div>
+                  <div class="stat-value" id="timer-display">00:00</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="stat-item">
+                  <div class="stat-label">Best Score</div>
+                  <div class="stat-value" id="best-score">-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control Buttons -->
+          <div class="game-controls mb-4 text-center">
+            <button id="start-btn" class="btn btn-get-started me-2">Start</button>
+            <button id="restart-btn" class="btn btn-get-started" disabled>Restart</button>
+          </div>
+
+          <!-- Game Board -->
+          <div id="game-board" class="game-board"></div>
+
+          <!-- Win Message -->
+          <div id="win-message" class="win-message" style="display: none;">
+            <div class="win-content">
+              <i class="bi bi-trophy-fill"></i>
+              <h3>Congratulations!</h3>
+              <p>You've matched all pairs!</p>
+              <p class="win-stats">Moves: <span id="win-moves"></span> | Time: <span id="win-time"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Memory Game Section -->
+
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -193,6 +266,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Memory Game JS File -->
+  <script src="assets/js/memory-game.js"></script>
 
 </body>
 
