@@ -1,0 +1,246 @@
+body {
+  background: linear-gradient(135deg, #ffd6f4, #e8d4ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hidden class */
+.hidden { display: none; }
+
+/* Wheel container */
+.wheel-wrapper {
+  position: relative;
+}
+
+/* The wheel */
+.wheel {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(circle at center,
+      #ffe8fa 0%,
+      #ffbff2 50%,
+      #d8b6ff 100%
+  );
+
+  border: 8px solid white;
+  box-shadow: 0 0 25px rgba(255, 140, 219, 0.4),
+              0 0 55px rgba(176, 126, 255, 0.3);
+}
+
+.slice {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform-origin: left center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slice span {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.s1 { transform: rotate(0deg); }
+.s2 { transform: rotate(72deg); }
+.s3 { transform: rotate(144deg); }
+.s4 { transform: rotate(216deg); }
+.s5 { transform: rotate(288deg); }
+
+/* SPIN BUTTON */
+.spin-btn {
+  margin-top: 25px;
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff8cd6, #c58cff);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(197, 140, 255, 0.4);
+  transition: 0.2s;
+}
+.spin-btn:hover { transform: scale(1.08); }
+.spin-btn:active { transform: scale(0.95); }
+
+/* EMOJI CONFETTI */
+#emojiExplosion {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.emoji-piece {
+  position: absolute;
+  animation: fall 1.5s linear forwards;
+  opacity: 0;
+}
+@keyframes fall {
+  0% { opacity: 1; transform: translateY(-50px) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+}
+
+/* QUESTION SCREEN */
+#questionScreen {
+  text-align: center;
+  width: 90%;
+}
+#timer {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+#questionText {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.optionBtn {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.optionBtn:hover {
+  background: #ffd5ff;
+  transform: scale(1.03);
+}
+
+/* RESULTS */
+#resultScreen {
+  text-align: center;
+}
+#restartBtn {
+  padding: 12px 28px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  background: #c58cff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ff5ebd;
+  margin: 10px 0 0 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: #7d4aa3;
+}
+
+/* Layout */
+.intro-container {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 1100px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  box-shadow: 0 10px 40px rgba(255, 153, 233, 0.2);
+}
+
+/* Left side: Wheel */
+.intro-wheel-block {
+  width: 55%;
+  text-align: center;
+}
+
+.intro-description {
+  font-size: 1rem;
+  margin-top: 15px;
+  color: #6d4f75;
+}
+
+/* Right side: categories */
+.intro-categories {
+  width: 40%;
+  padding-right: 20px;
+}
+
+.intro-categories h2 {
+  font-size: 1.8rem;
+  color: #5c2c86;
+  margin-bottom: 10px;
+}
+
+.cat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: linear-gradient(90deg, #f7d2ff, #e7d7ff);
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+
+  box-shadow: 0 4px 10px rgba(190, 140, 255, 0.25);
+}
+
+.cat-item span {
+  font-size: 1.5rem;
+}
+
+.category-info {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #6a4c85;
+}
+.correct {
+  background: #c3ffcc !important;
+  border: 2px solid #34c759;
+}
+
+.wrong {
+  background: #ffcccc !important;
+  border: 2px solid #ff3b30;
+}
+
+.intro-wheel-block {
+  position: relative;
+}
+
+#pointer {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.4rem;
+  color: #ff48c4;
+  text-shadow: 0px 2px 5px rgba(255, 0, 200, 0.4);
+}

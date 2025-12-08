@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pink Wheel Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="emojiExplosion"></div>
+
+<div id="introScreen">
+
+  <h1 class="title">Pinky Trivia Wheel</h1>
+  <p class="subtitle">Spin the wheel, get a category, beat the 15-second timer ✨</p>
+
+  <div class="intro-container">
+
+      <!-- Wheel -->
+      <div class="intro-wheel-block">
+        <div id="pointer">▼</div>
+        <div class="wheel" id="wheel">
+          <div class="slice s1"><span>🌍</span></div>
+          <div class="slice s2"><span>🛍️</span></div>
+          <div class="slice s3"><span>🏟️</span></div>
+          <div class="slice s4"><span>🎭</span></div>
+          <div class="slice s5"><span>🍀</span></div>
+      </div>
+  
+      <button id="spinBtn" class="spin-btn">TAP TO<br>Spin</button>
+
+          <p class="intro-description">
+              Click the pink center to spin.  
+              A random category will be chosen and your 10-question quiz will start!
+          </p>
+      </div>
+
+      <!-- Categories List -->
+      <div class="intro-categories">
+          <h2>Categories</h2>
+
+          <div class="cat-item"><span>🌍</span> General Culture</div>
+          <div class="cat-item"><span>🛍️</span> Fashion</div>
+          <div class="cat-item"><span>🏟️</span> Sports</div>
+          <div class="cat-item"><span>🎭</span> Entertainment</div>
+          <div class="cat-item"><span>🍀</span> Nature</div>
+
+          <p class="category-info">
+              Each category has 10 multiple-choice questions.  
+              You get <b>15 seconds</b> per question.  
+              Correct answers give ✨, wrong answers explode with ❌.
+          </p>
+      </div>
+
+  </div>
+</div>
+
+<!-- SORU EKRANI -->
+<div id="questionScreen" class="hidden">
+    <h2 id="categoryTitle"></h2>
+    <div id="timer"></div>
+    <div id="questionText"></div>
+
+    <div class="options">
+        <button class="optionBtn" id="opt0"></button>
+        <button class="optionBtn" id="opt1"></button>
+        <button class="optionBtn" id="opt2"></button>
+        <button class="optionBtn" id="opt3"></button>
+    </div>
+</div>
+
+<!-- SONUÇ -->
+<div id="resultScreen" class="hidden">
+    <h1>Quiz Result</h1>
+    <p id="scoreText"></p>
+    <button id="restartBtn">Play Again</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
